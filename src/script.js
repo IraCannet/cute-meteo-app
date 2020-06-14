@@ -35,12 +35,3 @@ if (weather[city] !== undefined) {
   alert(`Sorry we don't know the weather for this city, 
 try going to the https://www.google.com/search?q=google+weather+${city}`);
 }
-
-/*
-for (let i = 0; weather[i] === city; i++) {
-  alert(
-    `In ${weather[i]} the tempeture is ${weather[i].temp}, the humidity is ${weather[i].humidity}.`
-  );
-}
-alert(`Sorry we don't know the weather for this city, 
-try going to the https://www.google.com/search?q=google+weather+${city}`);*/
