@@ -14,9 +14,8 @@ h1 {
 }
 input {
   border: 1px solid #212121;
-  width: 275px;
-  padding: 6px 3px;
-  margin: 3px 20px;
+  width: 220px;
+  padding: 8px 8px;
   border-radius: 5px;
 }
 form {
@@ -48,9 +47,11 @@ i {
 .search-button {
   color: #fff8d2;
   background-color: #eb89b5;
-  padding: 8px 15px;
+  padding: 8px 19px;
   border-radius: 5px;
   border: 2px solid #eb89b5;
+  margin-left: 28px;
+  margin-top: -2px;
 }
 .row {
   font-size: 20px;
