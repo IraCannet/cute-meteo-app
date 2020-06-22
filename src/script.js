@@ -54,7 +54,7 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-h3.innerHTML = `${day} ${date} ${month} ${hours}:${minutes}`;
+h3.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}`;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
