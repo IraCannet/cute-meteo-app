@@ -14,19 +14,22 @@ h1 {
 }
 input {
   border: 1px solid #212121;
-  width: 220px;
+  width: 240px;
   padding: 8px 8px;
   border-radius: 5px;
+  text-align: left;
 }
-form {
-  text-align: center;
-  display: block;
-  border-radius: 10px;
-  margin: 10px;
-}
+
 svg {
   display: block;
   margin: 0 auto;
+  margin-top: -35px;
+  margin-bottom: -25px;
+}
+h3 {
+  color: #757575;
+  text-align: center;
+  padding: 0;
 }
 h2 {
   color: #212121;
@@ -35,29 +38,26 @@ h2 {
   margin: -7px 0;
 }
 
-span {
-  text-align: center;
-  margin-right: 20px;
-}
-
 i {
   color: #eb89b5;
   font-size: 40px;
 }
-.search-button {
-  color: #fff8d2;
-  background-color: #eb89b5;
-  padding: 8px 19px;
-  border-radius: 5px;
-  border: 2px solid #eb89b5;
-  margin-left: 28px;
-  margin-top: -2px;
+
+.float-left {
+  text-align: center;
+  margin-right: 20px;
 }
 .row {
   font-size: 20px;
-  margin: 0 20px;
+  padding-left: 35px;
 }
-::placeholder {
-  color: #757575;
-  font-size: 14px;
+
+input[type="submit" i] {
+  text-align: center;
+  color: #fff8d2;
+  background-color: #eb89b5;
+  border: 2px solid #eb89b5;
+  border-radius: 5px;
+  width: 105px;
+  margin-top: -2px;
 }
