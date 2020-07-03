@@ -1,37 +1,66 @@
-let weather = {
-  paris: {
-    temp: 19.7,
-    humidity: 80,
-  },
-  tokyo: {
-    temp: 17.3,
-    humidity: 50,
-  },
-  lisbon: {
-    temp: 30.2,
-    humidity: 20,
-  },
-  "san francisco": {
-    temp: 20.9,
-    humidity: 100,
-  },
-  moscow: {
-    temp: -5,
-    humidity: 20,
-  },
-};
-
-let city = prompt("Enter a city:");
-city = city.toLowerCase();
-if (weather[city] !== undefined) {
-  let tempeture = weather[city].temp;
-  let celsiusTempeture = Math.round(tempeture);
-  let fahrenheitTemperature = Math.round((tempeture * 9) / 5 + 32);
-  let humidity = weather[city].humidity;
-  alert(
-    `It is currently ${celsiusTempeture}°C (${fahrenheitTemperature}°F) in ${city} with a humidity of ${humidity}%`
-  );
-} else {
-  alert(`Sorry we don't know the weather for this city, 
-try going to the https://www.google.com/search?q=google+weather+${city}`);
+function search(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-text-input");
+  let h1 = document.querySelector("h1");
+  if (searchInput.value) {
+    h1.innerHTML = `${searchInput.value}`;
+  } else {
+    alert("Please, type something 🙏🏻");
+  }
+  form.reset();
 }
+
+function clickFahrenheit() {
+  let degree = document.querySelector("#degree");
+  degree.innerHTML = `64`;
+}
+
+function clickCelsius() {
+  let degree = document.querySelector("#degree");
+  degree.innerHTML = `18`;
+}
+
+let now = new Date();
+let h3 = document.querySelector("h3");
+let date = now.getDate();
+let hours = now.getHours();
+let minutes = ("0" + now.getMinutes()).slice(-2);
+let year = now.getFullYear();
+let milliSeconds = now.getMilliseconds();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+
+let months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+let month = months[now.getMonth()];
+
+h3.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}`;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
+
+let degreeFahrenheit = document.querySelector("#fahrenheit");
+degreeFahrenheit.addEventListener("click", clickFahrenheit);
+
+let degreeCelsius = document.querySelector("#celsius");
+degreeCelsius.addEventListener("click", clickCelsius);

@@ -26,16 +26,25 @@
   <body>
     <section>
       <div class="container"></div>
-        <h1>Choose your city</h1>
-                
-        
-        <div class="clearfix">
-            <form>
-            <input class="float-left" type="text" placeholder="Paris" />
-            </form>
-            <button class="search-button">Search</button>
-        </div>
+        <h1>Paris</h1>
 
+
+
+          <div class="clearfix">
+            <form id="search-form">
+             
+              <input type="text" 
+              placeholder="Search for a city" 
+              autocomplete="off" 
+              class="float-left"
+                id="search-text-input" />
+             
+              <input type="submit" value="Search" />
+
+            </form>
+          </div>
+          <br>
+        <h3>Today</h3>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -79,7 +88,11 @@
           </g>
         </svg>
 
-        <h2>18°C | °F</h2>
+        <h2><span id="degree">18</span>
+      <a href="#" id="celsius">°C </a>
+      |
+      <a href="#" id="fahrenheit">°F</a>
+    </h2>
               <br />
         <div class="row">
           <div class="col-6">Humidity 69%</div>
