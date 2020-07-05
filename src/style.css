@@ -19,6 +19,16 @@ input {
   border-radius: 5px;
   text-align: left;
 }
+button {
+  text-align: center;
+  color: #fff8d2;
+  background-color: #eb89b5;
+  border: 2px solid #eb89b5;
+  border-radius: 5px;
+  width: 105px;
+  margin-top: -2px;
+  font-size: 12px;
+}
 
 svg {
   display: block;
