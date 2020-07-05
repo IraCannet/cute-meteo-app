@@ -2,7 +2,7 @@ section {
   background: linear-gradient(#fffbf3, #ffd7e9);
   border: 2px solid #212121;
   border-radius: 3px;
-  width: 400px;
+  width: 390px;
   display: block;
   margin: 0 auto;
   padding: 15px;
@@ -14,11 +14,11 @@ h1 {
 }
 input {
   border: 1px solid #212121;
-  width: 240px;
+  width: 230px;
   padding: 8px 8px;
-  border-radius: 5px;
   text-align: left;
 }
+
 button {
   text-align: center;
   color: #fff8d2;
@@ -26,7 +26,7 @@ button {
   border: 2px solid #eb89b5;
   border-radius: 5px;
   width: 105px;
-  margin-top: -2px;
+  margin-top: 2px;
   font-size: 12px;
 }
 
@@ -70,7 +70,7 @@ input[type="submit" i] {
   color: #fff8d2;
   background-color: #eb89b5;
   border: 2px solid #eb89b5;
-  border-radius: 5px;
   width: 105px;
   margin-top: -2px;
+  margin-bottom: 2px;
 }

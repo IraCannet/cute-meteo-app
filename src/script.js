@@ -32,9 +32,12 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
 
   let sunrise = document.querySelector("#sunrise");
-  let theSunrise = new Date(response.data.sys.sunrise);
-  let sunriseHour = theSunrise.getHours();
-  let sunriseMinute = theSunrise.getMinutes();
+  let theSunrise = new Number(response.data.sys.sunrise);
+  theSunrise = theSunrise * 1000;
+
+  let sunriseToDate = new Date(theSunrise);
+  let sunriseHour = sunriseToDate.getHours();
+  let sunriseMinute = sunriseToDate.getMinutes();
 
   if (sunriseMinute < 10) {
     sunriseMinute = `0${sunriseMinute}`;
@@ -43,9 +46,12 @@ function showWeather(response) {
   sunrise.innerHTML = `${sunriseHour}:${sunriseMinute}`;
 
   let sunset = document.querySelector("#sunset");
-  let theSunset = new Date(response.data.sys.sunset);
-  let sunsetHour = theSunset.getHours();
-  let sunsetMinute = theSunset.getMinutes();
+  let theSunset = new Number(response.data.sys.sunset);
+  theSunset = theSunset * 1000;
+
+  let sunsetToDate = new Date(theSunset);
+  let sunsetHour = sunsetToDate.getHours();
+  let sunsetMinute = sunsetToDate.getMinutes();
 
   if (sunsetMinute < 10) {
     sunsetMinute = `0${sunsetMinute}`;
