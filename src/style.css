@@ -52,6 +52,9 @@ i {
   color: #eb89b5;
   font-size: 40px;
 }
+p {
+  text-align: center;
+}
 
 .float-left {
   text-align: center;
