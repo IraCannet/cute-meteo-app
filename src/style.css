@@ -60,8 +60,10 @@ i {
   color: #eb89b5;
   font-size: 40px;
 }
-p {
-  margin-left: 378px;
+.signature {
+  width: 370px;
+  display: block;
+  margin: 0 auto;
 }
 
 .float-left {
