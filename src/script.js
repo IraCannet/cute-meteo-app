@@ -24,7 +24,12 @@ function showWeather(response) {
   let tempElement = document.querySelector("#degree");
   tempElement.innerHTML = `${temperature}°C`;
   form.reset();
-
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
 
@@ -75,7 +80,7 @@ function searchPosition(position) {
 }
 
 let now = new Date();
-let h3 = document.querySelector("h3");
+let h4 = document.querySelector("h4");
 let date = now.getDate();
 let hours = now.getHours();
 let minutes = ("0" + now.getMinutes()).slice(-2);
@@ -108,7 +113,7 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-h3.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}`;
+h4.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}`;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
