@@ -6,7 +6,7 @@ section {
   background: linear-gradient(#fffbf3, #ffd7e9);
   border: 2px solid #212121;
   border-radius: 3px;
-  width: 380px;
+  width: 370px;
   display: block;
   margin: 0 auto;
   padding: 15px;
@@ -18,7 +18,7 @@ h1 {
 }
 input {
   border: 1px solid #212121;
-  width: 220px;
+  width: 210px;
   padding: 8px 8px;
   border-radius: 5px;
   text-align: left;
