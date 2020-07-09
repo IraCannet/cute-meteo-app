@@ -84,6 +84,16 @@ i {
   padding-left: 35px;
 }
 
+.active {
+  color: black;
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: black;
+}
+
 input[type="submit" i] {
   text-align: center;
   color: #fff8d2;

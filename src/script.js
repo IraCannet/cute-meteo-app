@@ -22,7 +22,7 @@ function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   console.log(temperature);
   let tempElement = document.querySelector("#degree");
-  tempElement.innerHTML = `${temperature}°C`;
+  tempElement.innerHTML = `${temperature}`;
   form.reset();
   document
     .querySelector("#icon")
@@ -34,7 +34,9 @@ function showWeather(response) {
     response.data.weather[0].main;
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 
   let sunrise = document.querySelector("#sunrise");
   let theSunrise = new Number(response.data.sys.sunrise);
@@ -63,6 +65,8 @@ function showWeather(response) {
   }
 
   sunset.innerHTML = `${sunsetHour}:${sunsetMinute}`;
+
+  celsiusTemperature = response.data.main.temp;
 }
 function getCurrentPosition(event) {
   event.preventDefault();
@@ -77,6 +81,22 @@ function searchPosition(position) {
   let unit = "metric";
   let apiUrl = `${apiEndPoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showWeather);
+}
+function clickFahrenheit() {
+  event.preventDefault();
+  degreeFahrenheit.classList.add("active");
+  degreeCelsius.classList.remove("active");
+  let degree = document.querySelector("#degree");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  degree.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function clickCelsius() {
+  event.preventDefault();
+  degreeCelsius.classList.add("active");
+  degreeFahrenheit.classList.remove("active");
+  let degree = document.querySelector("#degree");
+  degree.innerHTML = Math.round(celsiusTemperature);
 }
 
 let now = new Date();
@@ -118,20 +138,14 @@ h4.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}`;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-/*
-  let searchInput = document.querySelector("#search-text-input");
-  let h1 = document.querySelector("h1");
-
-  if (searchInput.value) {
-    h1.innerHTML = `${searchInput.value}`;
-  } else {
-    alert("Please, type something 🙏🏻");
-  }
-  function showPosition(position) {
-    let h1 = document.querySelector("h1");
-    h1.innerHTML = `${position.name}`;
-  }*/
-
 let currentLocationButton = document.querySelector("#current-loc");
 currentLocationButton.addEventListener("click", getCurrentPosition);
+let celsiusTemperature = null;
+
+let degreeFahrenheit = document.querySelector("#fahrenheit");
+degreeFahrenheit.addEventListener("click", clickFahrenheit);
+
+let degreeCelsius = document.querySelector("#celsius");
+degreeCelsius.addEventListener("click", clickCelsius);
+
 searchCity("Paris");
