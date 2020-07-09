@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+  text-align: unset;
+}
 section {
   background: linear-gradient(#fffbf3, #ffd7e9);
   border: 2px solid #212121;
@@ -16,6 +20,10 @@ input {
   border: 1px solid #212121;
   width: 230px;
   padding: 8px 8px;
+  border-radius: 5px;
+  text-align: left;
+}
+form {
   text-align: left;
 }
 
@@ -57,7 +65,6 @@ p {
 }
 
 .float-left {
-  text-align: center;
   margin-right: 20px;
 }
 .row {
@@ -73,4 +80,5 @@ input[type="submit" i] {
   width: 105px;
   margin-top: -2px;
   margin-bottom: 2px;
+  border-radius: 5px;
 }
