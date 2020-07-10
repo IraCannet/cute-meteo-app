@@ -13,7 +13,7 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script
       src="https://kit.fontawesome.com/b36eb53697.js"
       crossorigin="anonymous"
@@ -25,52 +25,81 @@
   <body>
     <section>
       <div class="container"></div>
-        <h1 id="city"></h1>
+      <h1 id="city"></h1>
 
+      <div class="clearfix">
+        <form id="search-form">
+          <input
+            type="text"
+            placeholder="Search for a city"
+            autocomplete="off"
+            class="float-left"
+            id="search-text-input"
+          />
+          <input type="submit" value="Search" />
+        </form>
 
-<div class="clearfix">
-  
-  <form id="search-form">    
-
-    <input type="text" 
-    placeholder="Search for a city" 
-    autocomplete="off" 
-    class="float-left"
-      id="search-text-input" />
-    <input type="submit" value="Search" />
-
-  </form>
-
-  <div style="float: right">
-    <button id="current-loc">Your location</button>
-  </div>
-</div>
-        <small>last updated at</small>
-        <h4>Today</h4>
-        <img src="#" alt="weather-icon" id="icon">
-        
-
-<h3 id="description"></h3>
-        <h2>     
-        <span id="degree"></span>
-       <span id="unit">
-        <a href="#" id="celsius" class="active">°C </a>
-        |
-        <a href="#" id="fahrenheit">°F</a>
-      </span>
-        </h2>
-        <div class="row">
-          <div class="col-6">Humidity <span id="humidity"></span>%</div>
-          <div class="col-6">Wind <span id="wind"></span> km/h</div>
-          <div class="col-6">Sunrise <span id="sunrise"></span></div>
-          <div class="col-6">Sunset <span id="sunset"></span></div>
+        <div style="float: right;">
+          <button id="current-loc">Your location</button>
         </div>
+      </div>
+      <small>last updated at</small>
+      <h4>Today</h4>
+      <img src="#" alt="weather-icon" id="icon" />
 
-        <br />
+      <h3 id="description"></h3>
+      <h2>
+        <span id="degree"></span>
+        <span id="unit">
+          <a href="#" id="celsius" class="active">°C </a>
+          |
+          <a href="#" id="fahrenheit">°F</a>
+        </span>
+      </h2>
+      <div class="row">
+        <div class="col-6">Humidity <span id="humidity"></span>%</div>
+        <div class="col-6">Wind <span id="wind"></span> km/h</div>
+        <div class="col-6">Sunrise <span id="sunrise"></span></div>
+        <div class="col-6">Sunset <span id="sunset"></span></div>
+      </div>
+
+      <br />
+      <div class="clearfix">
+        <span class="float-left">
+          <p>18</p>
+          <i class="fas fa-cloud"></i>
+          <p>Monday</p>
+        </span>
+
+        <span class="float-left">
+          <p>19</p>
+          <i class="fas fa-cloud-sun"></i>
+          <p>Tuesday</p>
+        </span>
+
+        <span class="float-left">
+          <p>22</p>
+          <i class="fas fa-cloud-sun"></i>
+          <p>Wednesday</p>
+        </span>
+
+        <span class="float-left">
+          <p>19</p>
+          <i class="fas fa-cloud-rain"></i>
+          <p>Thursday</p>
+        </span>
+
+        <span class="float-left">
+          <p>23</p>
+          <i class="fas fa-cloud-rain"></i>
+          <p>Friday</p>
+        </span>
       </div>
     </section>
-    <div class="signature">Open-source code by <span><a href="https://github.com/IraCannet/cute-meteo-app">Ira</a></span></div>
-        <script src="src/script.js"></script>
-
+    <div class="signature">
+      Open-source code by
+      <span><a href="https://github.com/IraCannet/cute-meteo-app">Ira</a></span>
+    </div>
+    <script src="src/script.js"></script>
   </body>
 </html>

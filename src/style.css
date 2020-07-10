@@ -39,12 +39,6 @@ button {
   padding: 8px 8px;
 }
 
-svg {
-  display: block;
-  margin: 0 auto;
-  margin-top: -35px;
-  margin-bottom: -25px;
-}
 h4 {
   color: #757575;
   text-align: center;
@@ -68,7 +62,11 @@ h2 {
 
 i {
   color: #eb89b5;
-  font-size: 40px;
+  font-size: 35px;
+}
+p {
+  font-size: 14px;
+  text-align: center;
 }
 .signature {
   width: 370px;
