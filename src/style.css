@@ -60,18 +60,26 @@ h2 {
   margin: -7px 0;
 }
 
-i {
+img {
   color: #eb89b5;
   font-size: 35px;
+  margin-top: -10px;
+  margin-bottom: -10px;
 }
 p {
   font-size: 14px;
   text-align: center;
 }
+.main-icon img {
+  width: 70px;
+}
 .signature {
   width: 370px;
   display: block;
   margin: 0 auto;
+}
+.forecast-element {
+  width: 70px;
 }
 
 .float-left {

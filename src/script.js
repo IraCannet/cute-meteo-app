@@ -4,6 +4,41 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
+function showWForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `        <span class="float-left">
+          <h5>${formatHours(forecast.dt * 1000)}</h5>
+          <img src="https://openweathermap.org/img/wn/${
+            forecast.weather[0].icon
+          }@2x.png" alt="">
+          <div class="weather-forecast-temperature">
+            <strong>${Math.round(
+              forecast.main.temp_max
+            )}°</strong> ${Math.round(forecast.main.temp_min)}°
+          </div>
+        </span>`;
+  }
+}
+
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
 function searchCity(city) {
   let apiKey = "7fdccd62f53b23719a5ed84efc64f715";
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -11,6 +46,9 @@ function searchCity(city) {
   let apiUrl = `${apiEndPoint}${city}&appid=${apiKey}&units=${unit}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(showWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast/?q=${city}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(showWForecast);
 }
 
 function showWeather(response) {
@@ -80,6 +118,7 @@ function searchPosition(position) {
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
   let unit = "metric";
   let apiUrl = `${apiEndPoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(getCurrentPosition);
   axios.get(apiUrl).then(showWeather);
 }
 function clickFahrenheit() {
@@ -133,7 +172,7 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-h4.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}`;
+h4.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}th`;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
