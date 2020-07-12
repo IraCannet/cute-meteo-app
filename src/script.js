@@ -13,14 +13,14 @@ function showWForecast(response) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `        <span class="float-left">
           <h5>${formatHours(forecast.dt * 1000)}</h5>
-          <img src="https://openweathermap.org/img/wn/${
+          <img class="forecast-element" src="https://openweathermap.org/img/wn/${
             forecast.weather[0].icon
           }@2x.png" alt="">
-          <div class="weather-forecast-temperature">
-            <strong>${Math.round(
-              forecast.main.temp_max
-            )}°</strong> ${Math.round(forecast.main.temp_min)}°
-          </div>
+          <div class="weather-forecast-temperature"><p>
+            ${Math.round(forecast.main.temp_min)}°-${Math.round(
+      forecast.main.temp_max
+    )}°
+          </p></div>
         </span>`;
   }
 }

@@ -59,6 +59,12 @@ h2 {
   padding: 0;
   margin: -7px 0;
 }
+h5 {
+  color: #757575;
+  text-align: center;
+  padding: 0;
+  font-size: 14px;
+}
 
 img {
   color: #eb89b5;
@@ -67,8 +73,10 @@ img {
   margin-bottom: -10px;
 }
 p {
+  margin: 0 auto;
   font-size: 14px;
   text-align: center;
+  color: #757575;
 }
 .main-icon img {
   width: 70px;
@@ -78,7 +86,7 @@ p {
   display: block;
   margin: 0 auto;
 }
-.forecast-element {
+.forecast-element img {
   width: 70px;
 }
 
