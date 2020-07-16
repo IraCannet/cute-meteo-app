@@ -103,6 +103,8 @@ p {
 .row {
   font-size: 20px;
   padding-left: 35px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .active {
