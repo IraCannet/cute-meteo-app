@@ -15,6 +15,7 @@ section {
 h1 {
   color: #eb89b5;
   text-align: center;
+  font-size: 35px;
 }
 input {
   border: 1px solid #212121;
@@ -45,6 +46,7 @@ h4 {
   padding: 0;
   margin-top: 7px;
   margin-bottom: 0px;
+  font-size: 22px;
 }
 h3 {
   color: #757575;
