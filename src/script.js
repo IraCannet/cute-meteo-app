@@ -1,5 +1,15 @@
 function handleSubmit(event) {
+  debugger;
   event.preventDefault();
+  console.log(document.querySelector("#search-text-input").placeholder);
+  if (
+    document.querySelector("#search-text-input").placeholder.length <= 0 ||
+    document.querySelector("#search-text-input").placeholder ==
+      "Search for a city"
+  ) {
+    alert("Please enter a city! 😉🌇");
+  } else {
+  }
   let city = document.querySelector("#search-text-input").value;
   searchCity(city);
 }
@@ -169,7 +179,6 @@ let months = [
   "November",
   "December",
 ];
-debugger;
 let month = months[now.getMonth()];
 
 h4.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}th`;
