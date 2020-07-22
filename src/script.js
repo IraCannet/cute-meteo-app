@@ -17,9 +17,9 @@ function showWForecast(response) {
             forecast.weather[0].icon
           }@2x.png" alt="">
           <div class="weather-forecast-temperature"><p>
-            ${Math.round(forecast.main.temp_min)}°-${Math.round(
-      forecast.main.temp_max
-    )}°
+            ${Math.round(
+              (forecast.main.temp_min + forecast.main.temp_max) / 2
+            )}°
           </p></div>
         </span>`;
   }
