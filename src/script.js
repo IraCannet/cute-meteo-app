@@ -118,7 +118,6 @@ function searchPosition(position) {
   let apiEndPoint = "https://api.openweathermap.org/data/2.5/weather";
   let unit = "metric";
   let apiUrl = `${apiEndPoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
-  axios.get(apiUrl).then(getCurrentPosition);
   axios.get(apiUrl).then(showWeather);
 }
 function clickFahrenheit() {
@@ -170,6 +169,7 @@ let months = [
   "November",
   "December",
 ];
+debugger;
 let month = months[now.getMonth()];
 
 h4.innerHTML = `${hours}:${minutes} ${day}, ${month} ${date}th`;
@@ -178,7 +178,11 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-loc");
-currentLocationButton.addEventListener("click", getCurrentPosition);
+currentLocationButton.addEventListener(
+  "click",
+  getCurrentPosition,
+  showWForecast
+);
 let celsiusTemperature = null;
 
 let degreeFahrenheit = document.querySelector("#fahrenheit");
