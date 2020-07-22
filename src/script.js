@@ -128,6 +128,8 @@ function searchPosition(position) {
   let unit = "metric";
   let apiUrl = `${apiEndPoint}?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showWeather);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(showWForecast);
 }
 function clickFahrenheit() {
   event.preventDefault();
@@ -186,11 +188,7 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-loc");
-currentLocationButton.addEventListener(
-  "click",
-  getCurrentPosition,
-  showWForecast
-);
+currentLocationButton.addEventListener("click", getCurrentPosition);
 let celsiusTemperature = null;
 
 let degreeFahrenheit = document.querySelector("#fahrenheit");
